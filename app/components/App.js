@@ -3,6 +3,8 @@ const ReactRouter = require('react-router-dom');
 const Router = ReactRouter.BrowserRouter;
 const Route = ReactRouter.Route;
 const Switch = ReactRouter.Switch;
+const NavBar = require("./NavBar");
+const TopStories = require("./TopStories");
 
 //set the route component where you want a specific component displayed
 //after navigating to that path
@@ -12,7 +14,14 @@ class App extends React.Component {
     
 render() {
     return(
-        <div>test</div>
+        <Router>
+        <section className="outerContainer">
+        <NavBar />
+        <Switch>
+            <TopStories />
+        </ Switch>
+        </section>
+        </ Router>
         )
     }
     
