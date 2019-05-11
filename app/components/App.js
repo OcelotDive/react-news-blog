@@ -5,6 +5,7 @@ const Route = ReactRouter.Route;
 const Switch = ReactRouter.Switch;
 const NavBar = require("./NavBar");
 const TopStories = require("./TopStories");
+const NewStories = require("./NewStories");
 
 //set the route component where you want a specific component displayed
 //after navigating to that path
@@ -18,7 +19,8 @@ render() {
         <section className="outerContainer">
         <NavBar />
         <Switch>
-            <TopStories />
+            <Route exact path="/top" component={TopStories} />
+        <Route exact path="/Latest" component={NewStories} /> 
         </ Switch>
         </section>
         </ Router>
