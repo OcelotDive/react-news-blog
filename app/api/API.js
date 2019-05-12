@@ -8,20 +8,21 @@ function getTopStoryList() {
 
 
 function findStory() {
-    const dataArray = [];
-    getTopStoryList()
+    
+  return  getTopStoryList()
     .then(storyArray => {
-     storyArray.map(item => {
+   return  storyArray.map(item => {
        return axios.get("https://hacker-news.firebaseio.com/v0/item/"+item+".json?print=pretty")
            .then(data => {
-           dataArray.push(data);
+           return data;
        });            
      })
    })
-    return dataArray;
+    
 }
 
 
+    
 
 
 module.exports = findStory;
