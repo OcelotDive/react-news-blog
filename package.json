@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Hacker News React Project",
   "main": "index.js",
-      "babel": {
+  "babel": {
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
@@ -29,6 +29,7 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0"
