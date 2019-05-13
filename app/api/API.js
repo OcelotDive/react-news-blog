@@ -8,10 +8,9 @@ function getTopStoryList100() {
 
 
  function addComments(data){  
-      data.data.kids.map(comment => {
-               return axios.get("https://hacker-news.firebaseio.com/v0/item/"+comment+".json?print=pretty")
-                    .then((comment,index, array) => {
-                   //console.log(comment.data)
+      data.data.kids.map(commentID => {
+               return axios.get("https://hacker-news.firebaseio.com/v0/item/"+commentID+".json?print=pretty")
+                    .then((comment) => {
                     !data.data.comments ? data.data.comments = [] : null;
                    data.data.comments.push(comment.data);
                     
@@ -19,7 +18,6 @@ function getTopStoryList100() {
                })
            })
       }
-
 
 function getStories() {
     
@@ -32,15 +30,14 @@ function getStories() {
                //add comments to the story object
             addComments(story);
            }
-          // console.log(data)
+          
            return story;
        });            
      })
    })   
 }
 
-  
-   
+
 
 
 

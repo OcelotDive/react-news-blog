@@ -40,8 +40,8 @@ class TopStories extends React.Component {
                 return obj.then(item => {
                   
                   list.push(item.data)
-                    
-                   // console.log(item.data)
+                    list.sort((a,b)=> b.score - a.score) 
+                    console.log(list)
                     this.setState(()=> {
                         return {
                             storyList: list
