@@ -1,5 +1,6 @@
 const React = require("react");
 const API = require("../api/API");
+const timeConvert = require("../util/timeConvert");
 const PropTypes = require("prop-types");
 const NavLink = require('react-router-dom').NavLink;
 const Loader = require("./Loader");
@@ -11,7 +12,7 @@ function ListItems(props) {
          return (
             <li key={item.id} className="newsItem">
             <a href={item.url} target="_blank"><div className="newsItemTitle">{item.title}</div></a>
-            <span className="infoText">By: <span className="infoSubject">{item.by}</span></span><span className="infoText"> Date: <span className="infoSubject">{API.timeConvert(item.time)}</span></span>
+            <span className="infoText">By: <span className="infoSubject">{item.by}</span></span><span className="infoText"> Date: <span className="infoSubject">{timeConvert(item.time)}</span></span>
             <span className="infoText"> Comments: <span className="infoSubject"><NavLink activeClassName="navActive Active" to="/comments">{item.kids && item.kids.length}</NavLink></span></span>
             </li>
          ) 

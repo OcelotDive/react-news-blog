@@ -29,6 +29,7 @@ function getStories() {
        return axios.get("https://hacker-news.firebaseio.com/v0/item/"+storyId+".json?print=pretty")
            .then(story => {
            if(story.data.kids){
+               //add comments to the story object
             addComments(story);
            }
           // console.log(data)
@@ -37,39 +38,13 @@ function getStories() {
      })
    })   
 }
-/*findStoryComments().then(comments =>  {
-    comments.slice(0,10)
-    console.log(comments)
-    comments.map(comment => {
-        comment.then(data => {
-            
-            })
-        })
 
-})*/
   
    
 
 
-function timeConvert(UNIX_timestamp){
-  const a = new Date(UNIX_timestamp * 1000);
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const year = a.getFullYear();
-  const month = months[a.getMonth()];
-  const date = a.getDate();
-  let hour = a.getHours();
-  if(hour < 10) hour = "0" + hour;
-  let min = a.getMinutes();
-  if(min < 10) min = "0" + min;
-  let sec = a.getSeconds();
-  if(sec < 10) sec = "0" + sec;
-  const time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-  return time;
-}
-
 
 const API = {
-    timeConvert: timeConvert,
     getStories: getStories
 }    
 
