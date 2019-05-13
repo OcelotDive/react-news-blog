@@ -6,7 +6,7 @@ function NavBar() {
     return (
         <ul className="navBar">
             <li>
-                <NavLink activeClassName="navActive Active" to="/top">
+                <NavLink activeClassName="navActive" to="/top">
                  Top
                 </ NavLink>
             </li>

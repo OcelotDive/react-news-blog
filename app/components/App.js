@@ -2,6 +2,7 @@ const React = require('react');
 const ReactRouter = require('react-router-dom');
 const Router = ReactRouter.BrowserRouter;
 const Route = ReactRouter.Route;
+const Redirect = ReactRouter.Redirect;
 const Switch = ReactRouter.Switch;
 const NavBar = require("./NavBar");
 const TopStories = require("./TopStories");
@@ -22,6 +23,7 @@ render() {
             <Route exact path="/top" component={TopStories} />
             <Route exact path="/latest" component={NewStories} />
             <Route exact path="/comments" component={Comments} />
+            <Redirect to="/top" />
         </ Switch>
         </section>
         </ Router>

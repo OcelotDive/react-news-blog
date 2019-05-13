@@ -63,7 +63,7 @@ Loading.propTypes = {
     text: PropTypes.string.isRequired
 }
 Loading.defaultProps = {
-    text: "Loading"
+    text: "Loading posts"
 }
 
 module.exports = Loading;
