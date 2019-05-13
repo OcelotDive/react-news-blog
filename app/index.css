@@ -5,16 +5,13 @@ body {
     position: relative;
     max-width: 1000px;
     margin: 3% 0% 0 8%;
-    border: solid 1px red;
 }
 .navBar {
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding: 0;
-    
-    
+    padding: 0;   
 }
 .navBar > li {
     margin: 0 0 0 20px;
@@ -36,6 +33,13 @@ body {
     color: crimson;
     
 }
+ul {
+    list-style: none;
+}
+.newsItem {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 a {
     text-decoration: none;
     color: black;
@@ -43,4 +47,20 @@ a {
 .storiesContainer {
     max-width: 1000px;
     margin: 4% auto;
+ 
+}
+.storiesList {
+    display: flex;
+    flex-direction: column;
+}
+.newsItemTitle {
+    color: blueviolet;
+}
+.infoSubject {
+    color: #000;
+    font-size: 16px;
+}
+.infoText {
+    color: grey;
+    font-size: 16px;
 }

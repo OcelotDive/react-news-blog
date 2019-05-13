@@ -6,7 +6,7 @@ const Switch = ReactRouter.Switch;
 const NavBar = require("./NavBar");
 const TopStories = require("./TopStories");
 const NewStories = require("./NewStories");
-
+const Comments = require("./Comments");
 //set the route component where you want a specific component displayed
 //after navigating to that path
 //Switch renders on specific route that is not an active route eg 404
@@ -20,7 +20,8 @@ render() {
         <NavBar />
         <Switch>
             <Route exact path="/top" component={TopStories} />
-        <Route exact path="/Latest" component={NewStories} /> 
+            <Route exact path="/latest" component={NewStories} />
+            <Route exact path="/comments" component={Comments} />
         </ Switch>
         </section>
         </ Router>

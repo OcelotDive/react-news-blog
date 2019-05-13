@@ -1,15 +1,18 @@
 const React = require("react");
 const API = require("../api/API");
 const PropTypes = require("prop-types");
-
+const NavLink = require('react-router-dom').NavLink;
+const Loader = require("./Loader");
 function ListItems(props) {
-
+    
     return (
-        <ul>
+        <ul className="storiesList">
         {props.storyList.map(item => {
          return (
-            <li>
-            {item}
+            <li key={item.id} className="newsItem">
+            <a href={item.url} target="_blank"><div className="newsItemTitle">{item.title}</div></a>
+            <span className="infoText">By: <span className="infoSubject">{item.by}</span></span><span className="infoText"> Date: <span className="infoSubject">{API.timeConvert(item.time)}</span></span>
+            <span className="infoText"> Comments: <span className="infoSubject"><NavLink activeClassName="navActive Active" to="/comments">{item.kids && item.kids.length}</NavLink></span></span>
             </li>
          ) 
         })}
@@ -29,16 +32,21 @@ class TopStories extends React.Component {
   
     componentDidMount() {
       
-        API().then(dataArray => {
+        API.getStories().then(dataArray => {
             const list = [];
+           
             dataArray.map(obj => {
                 return obj.then(item => {
+                  
                   list.push(item.data)
+                    
+                   // console.log(item.data)
                     this.setState(()=> {
                         return {
                             storyList: list
                         }
                     })
+        
                 })   
             })  
         }) 
@@ -50,7 +58,7 @@ class TopStories extends React.Component {
       
     return (
         <div className="storiesContainer">
-        <div>{JSON.stringify(data)}</div>
+        {data.length < 100 ? <Loader /> : <ListItems storyList={data}/>}
         </div>
         
     )
