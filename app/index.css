@@ -66,8 +66,9 @@ a {
 }
 .commentContainer {
     background-color: #ead9d9;
-    margin-top: 15px;
+    margin-top: 20px;
     text-indent: 10px;
+    padding-top: 10px;
 }
 .commentBody {
     text-indent: 0;

@@ -13,7 +13,7 @@ function ClassList({postData, comments}) {
      <div>
         <div>
         <span className="infoText">By: <span className="infoSubject">{postData.by}</span></span><span className="infoText"> On: <span className="infoSubject">{timeConvert(postData.time)}</span></span>
-        <span className="infoText"> Comments: <span className="infoSubject">{postData.kids && postData.kids.length}</span></span>
+        <span className="infoText"> Comments: <span className="infoSubject" style={{textDecoration: "underline"}}>{postData.kids && postData.kids.length}</span></span>
         <span className="infoText"> Rating: <span className="infoSubject">{postData.score}</span></span>
         </div>
         <br/>
