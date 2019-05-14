@@ -1,11 +1,8 @@
-
-
 const React = require("react");
 const API = require("../api/API");
 const PropTypes = require("prop-types");
 const Loader = require("./Loader");
 const ListItems = require("./ListItems");
-
 
 class NewStories extends React.Component {
     constructor(props) {
