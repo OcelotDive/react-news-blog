@@ -6,12 +6,12 @@ function NavBar() {
     return (
         <ul className="navBar">
             <li>
-                <NavLink activeClassName="navActive" to="/top">
+                <NavLink activeClassName="navActive" to={{pathname: "/top",state: {list: "top"}}}>
                  Top
                 </ NavLink>
             </li>
             <li>
-            <NavLink activeClassName="navActive" to="/Latest">
+            <NavLink activeClassName="navActive" to={{pathname: "/latest",state: {list: "latest"}}}>
              Latest
             </ NavLink>
             </li>

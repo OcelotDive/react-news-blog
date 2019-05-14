@@ -4,7 +4,7 @@ const timeConvert = require("../util/timeConvert");
 const NavLink = require('react-router-dom').NavLink;
 
 function ClassList({postData, comments}) {
-    console.log(comments)
+   
     
     function createMarkup(text) {
         return {__html: text}
@@ -42,7 +42,8 @@ function ClassList({postData, comments}) {
             resolvedComments: null
         }
     }
-     
+    
+    
     componentDidMount() {
         let resolvedCommentsArray = []
         API.getComments(this.state.comments).map(pending => pending.then(comment => {

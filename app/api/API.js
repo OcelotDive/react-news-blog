@@ -1,8 +1,8 @@
 const axios = require("axios");
 //https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty
 
-function getTopStoryList100() {
-    return axios.get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
+function getTopStoryList100(keyword) {
+    return axios.get("https://hacker-news.firebaseio.com/v0/"+keyword+".json?print=pretty")
     .then(data => data.data.slice(0,100)); 
 }
 
@@ -18,9 +18,9 @@ function getComments(commentArray) {
     })
 }
 
-function getStories() {
+function getStories(keyword) {
     
-  return  getTopStoryList100()
+  return  getTopStoryList100(keyword)
     .then(storyArray => { 
    return  storyArray.map(storyId => {
        return axios.get("https://hacker-news.firebaseio.com/v0/item/"+storyId+".json?print=pretty")

@@ -21,7 +21,7 @@ class Loading extends React.Component {
         this.interval = window.setInterval(function() { 
             if(index === stopper) {
                 text = originalText;
-                console.log(originalText)
+                
                 index = 0;
             }
             else {
@@ -40,7 +40,7 @@ class Loading extends React.Component {
                 }
             })
     //bind the interval to the component with .bind        
-    }.bind(this),300)
+    }.bind(this),100)
     }
     
     //make sure to clear interval on unmount
@@ -52,7 +52,7 @@ class Loading extends React.Component {
     render() {
         
         return(
-            <p style={{textAlign: "center", fontSize: "65px"}}>
+            <p style={{backgroundColor: "#fff", textAlign: "center", fontSize: "65px"}}>
             {this.state.text}
             </p>
         )
@@ -63,7 +63,7 @@ Loading.propTypes = {
     text: PropTypes.string.isRequired
 }
 Loading.defaultProps = {
-    text: "Loading posts"
+    text: "Loading..."
 }
 
 module.exports = Loading;
