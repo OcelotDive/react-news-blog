@@ -4,22 +4,27 @@ const timeConvert = require("../util/timeConvert");
 const PropTypes = require("prop-types");
 const NavLink = require('react-router-dom').NavLink;
 const Loader = require("./Loader");
+
 function ListItems(props) {
-    
+    //dynamic routing via id comments path name and passing state object
     return (
         <ul className="storiesList">
         {props.storyList.map(item => {
+       
          return (
             <li key={item.id} className="newsItem">
             <a href={item.url} target="_blank"><div className="newsItemTitle">{item.title}</div></a>
             <span className="infoText">By: <span className="infoSubject">{item.by}</span></span><span className="infoText"> Date: <span className="infoSubject">{timeConvert(item.time)}</span></span>
-            <span className="infoText"> Comments: <span className="infoSubject"><NavLink activeClassName="navActive Active" to="/comments">{item.kids && item.kids.length}</NavLink></span></span>
+            <span className="infoText"> Comments: <span className="infoSubject"><NavLink activeClassName="navActive Active" to={{pathname: "./comments/" + item.id.toString(),state: {itemData: item}}}>{item.kids && item.kids.length}</NavLink></span></span>
+            <span className="infoText"> Rating: <span className="infoSubject">{item.score}</span></span>
             </li>
          ) 
         })}
         </ul>
     )
 }
+
+
 
 class TopStories extends React.Component {
     constructor(props) {
@@ -32,7 +37,7 @@ class TopStories extends React.Component {
     }
   
     componentDidMount() {
-      
+     
         API.getStories().then(dataArray => {
             const list = [];
            
@@ -40,7 +45,7 @@ class TopStories extends React.Component {
                 return obj.then(item => {
                   
                   list.push(item.data)
-                    list.sort((a,b)=> b.score - a.score) 
+                  list.sort((a,b)=> b.score - a.score) 
                     console.log(list)
                     this.setState(()=> {
                         return {

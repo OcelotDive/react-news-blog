@@ -64,3 +64,12 @@ a {
     color: grey;
     font-size: 16px;
 }
+.commentContainer {
+    background-color: #ead9d9;
+    margin-top: 15px;
+    text-indent: 10px;
+}
+.commentBody {
+    text-indent: 0;
+    padding: 15px;
+}

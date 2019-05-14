@@ -22,7 +22,7 @@ render() {
         <Switch>
             <Route exact path="/top" component={TopStories} />
             <Route exact path="/latest" component={NewStories} />
-            <Route exact path="/comments" component={Comments} />
+            <Route exact path="/comments/:id" component={Comments} />
             <Redirect to="/top" />
         </ Switch>
         </section>
