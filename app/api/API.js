@@ -34,12 +34,16 @@ function getStories(keyword) {
 
 function getUserData(userId) {
     return axios.get("https://hacker-news.firebaseio.com/v0/user/"+userId+".json?print=pretty")
-    .then(data => data.data); 
+    .then(data => data.data)
+  
 }
 
 function getUserPosts(postArray) {
-    console.log("getUser firing")
-    return postArray.map(postId => console.log(postId))
+    return postArray.map(postId => {
+        return axios.get("https://hacker-news.firebaseio.com/v0/item/"+postId+".json?print=pretty")
+                .then(postItem => postItem.data);
+    }).slice(0,100)
+            
 }
 
 

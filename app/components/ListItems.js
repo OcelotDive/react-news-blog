@@ -4,7 +4,7 @@ const timeConvert = require("../util/timeConvert");
 
 function ListItems(props) {
     //dynamic routing via id comments path name and passing state object
-    console.log(props)
+   
     return (
         <ul className="storiesList">
         {props.storyList.map(item => {
