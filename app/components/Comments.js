@@ -3,7 +3,7 @@ const API = require("../api/API");
 const timeConvert = require("../util/timeConvert");
 const NavLink = require('react-router-dom').NavLink;
 
-function ClassList({postData, comments}) {
+function CommentUI({postData, comments}) {
    
     
     function createMarkup(text) {
@@ -12,7 +12,8 @@ function ClassList({postData, comments}) {
     return (
      <div>
         <div>
-        <span className="infoText">By: <span className="infoSubject">{postData.by}</span></span><span className="infoText"> On: <span className="infoSubject">{timeConvert(postData.time)}</span></span>
+        <span className="infoText">By: <span className="infoSubject">{postData.by}</span></span>
+        <span className="infoText"> On: <span className="infoSubject">{timeConvert(postData.time)}</span></span>
         <span className="infoText"> Comments: <span className="infoSubject" style={{textDecoration: "underline"}}>{postData.kids && postData.kids.length}</span></span>
         <span className="infoText"> Rating: <span className="infoSubject">{postData.score}</span></span>
         </div>
@@ -29,8 +30,6 @@ function ClassList({postData, comments}) {
      </div>
     )
 }
-
-
 
 
  class Comments extends React.Component {
@@ -60,7 +59,7 @@ function ClassList({postData, comments}) {
     return (
     <div>
     <h1 className="newsItemTitle">{data.title}</h1>
-    <ClassList postData={this.props.location.state.itemData} comments={this.state.resolvedComments}/>
+    <CommentUI postData={this.props.location.state.itemData} comments={this.state.resolvedComments}/>
     </div>
     )
      }

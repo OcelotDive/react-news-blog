@@ -4,6 +4,7 @@ const timeConvert = require("../util/timeConvert");
 
 function ListItems(props) {
     //dynamic routing via id comments path name and passing state object
+    console.log(props)
     return (
         <ul className="storiesList">
         {props.storyList.map(item => {
@@ -11,8 +12,20 @@ function ListItems(props) {
          return (
             <li key={item.id} className="newsItem">
             <a href={item.url} target="_blank"><h3 className="newsItemTitle">{item.title}</h3></a>
-            <span className="infoText">By: <span className="infoSubject">{item.by}</span></span><span className="infoText"> Date: <span className="infoSubject">{timeConvert(item.time)}</span></span>
-            <span className="infoText"> Comments: <span className="infoSubject" style={{textDecoration: "underline"}}><NavLink activeClassName="navActive" to={{pathname: "./comments/" + item.id.toString(),state: {itemData: item}}}>{item.kids ?item.kids.length : "0"}</NavLink></span></span>
+            <span className="infoText">By: <span className="infoSubject" style={{textDecoration: "underline"}}>
+            <NavLink activeClassName="navActive" to={{pathname: "./user/" + item.id.toString(),state: {itemData: item}}}>
+            {item.by}
+            </NavLink>
+            </span>
+            </span>
+            <span className="infoText"> Date: <span className="infoSubject">{timeConvert(item.time)}</span>                             
+            </span>
+            <span className="infoText"> Comments: <span className="infoSubject" style={{textDecoration: "underline"}}>
+            <NavLink activeClassName="navActive" to={{pathname: "./comments/" + item.id.toString(),state: {itemData: item}}}>
+            {item.kids ?item.kids.length : "0"}
+            </NavLink>
+            </span>
+            </span>
             <span className="infoText"> Rating: <span className="infoSubject">{item.score}</span></span>
             </li>
          ) 

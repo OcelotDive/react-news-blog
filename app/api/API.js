@@ -32,12 +32,18 @@ function getStories(keyword) {
 }
 
 
+function getUserData(userId) {
+    return axios.get("https://hacker-news.firebaseio.com/v0/user/"+userId+".json?print=pretty")
+    .then(data => data.data); 
+}
+
 
 
 
 const API = {
     getStories: getStories,
-    getComments: getComments
+    getComments: getComments,
+    getUserData: getUserData
     
 }    
 

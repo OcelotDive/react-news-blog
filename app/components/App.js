@@ -8,6 +8,7 @@ const NavBar = require("./NavBar");
 const TopStories = require("./TopStories");
 const NewStories = require("./NewStories");
 const Comments = require("./Comments");
+const UserPosts = require("./UserPosts");
 //set the route component where you want a specific component displayed
 //after navigating to that path
 //Switch renders on specific route that is not an active route eg 404
@@ -23,6 +24,7 @@ render() {
             <Route exact path="/top" component={TopStories} />
             <Route exact path="/latest" component={NewStories} />
             <Route exact path="/comments/:id" component={Comments} />
+            <Route exact path="/user/:id" component={UserPosts} />
             <Redirect to="/top" />
         </ Switch>
         </section>
