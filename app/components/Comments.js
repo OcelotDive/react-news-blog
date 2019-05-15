@@ -1,14 +1,13 @@
 const React = require("react");
 const API = require("../api/API");
 const timeConvert = require("../util/timeConvert");
+const createMarkup = require("../util/createMarkup");
 const NavLink = require('react-router-dom').NavLink;
 
 function CommentUI({postData, comments}) {
    
     
-    function createMarkup(text) {
-        return {__html: text}
-    }
+    
     return (
      <div>
         <div>

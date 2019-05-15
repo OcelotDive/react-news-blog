@@ -13,7 +13,7 @@ function ListItems(props) {
             <li key={item.id} className="newsItem">
             <a href={item.url} target="_blank"><h3 className="newsItemTitle">{item.title}</h3></a>
             <span className="infoText">By: <span className="infoSubject" style={{textDecoration: "underline"}}>
-            <NavLink activeClassName="navActive" to={{pathname: "./user/" + item.id.toString(),state: {itemData: item}}}>
+            <NavLink activeClassName="navActive" to={"./user/" + item.by}>
             {item.by}
             </NavLink>
             </span>

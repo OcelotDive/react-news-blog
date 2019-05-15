@@ -14,7 +14,7 @@ function getComments(commentArray) {
         return axios.get("https://hacker-news.firebaseio.com/v0/item/"+commentID+".json?print=pretty")
                 .then(comment => {
                 return comment;
-    })
+    }).catch(console.log("Something went wrong"))
     })
 }
 
@@ -37,13 +37,17 @@ function getUserData(userId) {
     .then(data => data.data); 
 }
 
-
+function getUserPosts(postArray) {
+    console.log("getUser firing")
+    return postArray.map(postId => console.log(postId))
+}
 
 
 const API = {
     getStories: getStories,
     getComments: getComments,
-    getUserData: getUserData
+    getUserData: getUserData,
+    getUserPosts: getUserPosts
     
 }    
 
