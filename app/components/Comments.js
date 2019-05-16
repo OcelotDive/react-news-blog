@@ -41,6 +41,7 @@ function CommentUI({postData, comments}) {
     
     
     componentDidMount() {
+    
         let resolvedCommentsArray = []
         API.getComments(this.state.comments).map(pending => pending.then(comment => {
             resolvedCommentsArray.push(comment.data);
@@ -51,10 +52,7 @@ function CommentUI({postData, comments}) {
         }))   
     }
      
-     componentWillUnmount() {
-        
 
-  }
      
      render() {
          const data = this.props.location.state.itemData;

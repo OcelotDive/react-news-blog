@@ -1,6 +1,5 @@
 const axios = require("axios");
 //https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty
-const signal = axios.CancelToken.source();
 
 
 
@@ -17,7 +16,7 @@ function getComments(commentArray) {
         return axios.get("https://hacker-news.firebaseio.com/v0/item/"+commentID+".json?print=pretty")
                 .then(comment => {
                 return comment;
-    }).catch(console.log("Something went wrong"))
+    })
     })
 }
 
@@ -56,7 +55,6 @@ const API = {
     getUserData: getUserData,
     getUserPosts: getUserPosts
 
-   
   
     
 }    
