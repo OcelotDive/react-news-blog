@@ -1,5 +1,8 @@
 const axios = require("axios");
 //https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty
+const signal = axios.CancelToken.source();
+
+
 
 function getTopStoryList100(keyword) {
     return axios.get("https://hacker-news.firebaseio.com/v0/"+keyword+".json?print=pretty")
@@ -52,6 +55,9 @@ const API = {
     getComments: getComments,
     getUserData: getUserData,
     getUserPosts: getUserPosts
+
+   
+  
     
 }    
 

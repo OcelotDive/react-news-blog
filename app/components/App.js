@@ -24,8 +24,9 @@ render() {
             <Route exact path="/top" component={TopStories} />
             <Route exact path="/latest" component={NewStories} />
             <Route exact path="/comments/:id" component={Comments} />
-            <Route exact path="/user/:id" component={UserPosts} />
-            <Redirect to="/top" />
+            <Route  path="/user/comments/:id" component={Comments} />
+            <Route  path="/user/:id" component={UserPosts} />
+            
         </ Switch>
         </section>
         </ Router>

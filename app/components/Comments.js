@@ -3,24 +3,21 @@ const API = require("../api/API");
 const timeConvert = require("../util/timeConvert");
 const createMarkup = require("../util/createMarkup");
 const NavLink = require('react-router-dom').NavLink;
+const SubHeaderInfo = require("./SubHeaderInfo");
+const axios = require("axios");
 
 function CommentUI({postData, comments}) {
    
-    
+   
     
     return (
      <div>
-        <div>
-        <span className="infoText">By: <span className="infoSubject">{postData.by}</span></span>
-        <span className="infoText"> On: <span className="infoSubject">{timeConvert(postData.time)}</span></span>
-        <span className="infoText"> Comments: <span className="infoSubject" style={{textDecoration: "underline"}}>{postData.kids && postData.kids.length}</span></span>
-        <span className="infoText"> Rating: <span className="infoSubject">{postData.score}</span></span>
-        </div>
+        <SubHeaderInfo item={postData} />
         <br/>
         {comments && comments.map(comment => {
          return (
             <div className="commentContainer" key={comment.id}>
-            <span className="infoText">By: <span className="infoSubject">{comment.by}</span></span><span className="infoText"> On: <span className="infoSubject">{timeConvert(comment.time)}</span></span>
+            <span className="infoText">By: <span className="infoSubject" style={{textDecoration: "underline"}}><NavLink  to={"/user/" + comment.by}>{comment.by}</NavLink></span></span><span className="infoText"> On: <span className="infoSubject">{timeConvert(comment.time)}</span></span>
             <div className="commentBody" id="commentText" dangerouslySetInnerHTML={createMarkup(comment.text)}></div>
             </div>
          )
@@ -32,9 +29,10 @@ function CommentUI({postData, comments}) {
 
 
  class Comments extends React.Component {
+     
     constructor(props) {
         super(props)
-        
+       
         this.state = {
             comments: this.props.location.state.itemData.kids,
             resolvedComments: null
@@ -52,6 +50,12 @@ function CommentUI({postData, comments}) {
             })      
         }))   
     }
+     
+     componentWillUnmount() {
+        
+
+  }
+     
      render() {
          const data = this.props.location.state.itemData;
          

@@ -10,7 +10,7 @@ function UserDataUI({data, postList}) {
    return (
        <div>
         <h1 className="newsItemTitle">{data.id}</h1>
-       <span className="infoText">Joined: <span className="infoSubject">
+        <span className="infoText">Joined: <span className="infoSubject">
             {timeConvert(data.created)}
             </span>
         </span>
@@ -72,7 +72,7 @@ class UserPosts extends React.Component {
   
     render() {
         const loaderMessage = "Loading user posts";
-        console.log(this.state.userPosts)
+    
         return ( 
             <div className="storiesContainer">
                {this.state.userPosts ? <UserDataUI data={this.state.userData} postList={this.state.userPosts}/> : <Loader loaderMessage={loaderMessage} /> }
