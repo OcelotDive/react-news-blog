@@ -5,18 +5,22 @@ const Loader = require("./Loader");
 const ListItems = require("./ListItems");
 
 
+
 class TopStories extends React.Component {
+    
     constructor(props) {
         super(props);
-        
+        this._isMounted = true;
         this.state = {
             storyList: []
+
         }
         
     }
 
     componentDidMount() {
         const keyword = "topstories";
+        
         API.getStories(keyword).then(dataArray => {
             const list = [];
            
@@ -25,18 +29,25 @@ class TopStories extends React.Component {
                   
                   list.push(item.data)
                   list.sort((a,b)=> b.score - a.score) 
-                  
+                 if(this._isMounted){
+                     
                     this.setState(()=> {
                         return {
                             storyList: list
                         }
                     })
-        
+                 }
                 })   
             })  
         }) 
+        
     }  
     
+    componentWillUnmount() {
+        
+       this._isMounted = false;
+       
+    }
     
     render() {
         const data = this.state.storyList;

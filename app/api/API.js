@@ -1,11 +1,11 @@
 const axios = require("axios");
-//https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty
-
 
 
 function getTopStoryList100(keyword) {
+    if(!keyword) source.cancel("operation cancelled")
     return axios.get("https://hacker-news.firebaseio.com/v0/"+keyword+".json?print=pretty")
-    .then(data => data.data.slice(0,100)); 
+    .then(data => data.data.slice(0,100))  
+   
 }
 
 
@@ -54,6 +54,7 @@ const API = {
     getComments: getComments,
     getUserData: getUserData,
     getUserPosts: getUserPosts
+   
 
   
     

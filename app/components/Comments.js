@@ -32,7 +32,7 @@ function CommentUI({postData, comments}) {
      
     constructor(props) {
         super(props)
-       
+       this._isMounted = true;
         this.state = {
             comments: this.props.location.state.itemData.kids,
             resolvedComments: null
@@ -45,22 +45,26 @@ function CommentUI({postData, comments}) {
         let resolvedCommentsArray = []
         API.getComments(this.state.comments).map(pending => pending.then(comment => {
             resolvedCommentsArray.push(comment.data);
-            
+             if(this._isMounted){
             this.setState(()=> {
               return {resolvedComments: resolvedCommentsArray}
-            })      
+            }) 
+             }
         }))   
+        
     }
      
-
+    componentWillUnmount() {
+       this._isMounted = false;  
+    }                                                                     
      
      render() {
          const data = this.props.location.state.itemData;
-         
+         const loaderMessage = "Loading comments"
     return (
     <div>
     <h1 className="newsItemTitle">{data.title}</h1>
-    <CommentUI postData={this.props.location.state.itemData} comments={this.state.resolvedComments}/>
+        {this.state.comments.length > 0 ? <CommentUI postData={this.props.location.state.itemData} comments={this.state.resolvedComments} /> : <Loader text={loaderMessage} />}
     </div>
     )
      }

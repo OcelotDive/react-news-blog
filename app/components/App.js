@@ -9,24 +9,29 @@ const TopStories = require("./TopStories");
 const NewStories = require("./NewStories");
 const Comments = require("./Comments");
 const UserPosts = require("./UserPosts");
+const ThemeChanger = require("./ThemeChanger");
 //set the route component where you want a specific component displayed
 //after navigating to that path
 //Switch renders on specific route that is not an active route eg 404
 //routes will work for links on imported components
+
 class App extends React.Component {
     
 render() {
     return(
         <Router>
+        
         <section className="outerContainer">
+        <ThemeChanger />
         <NavBar />
+        
         <Switch>
             <Route exact path="/top" component={TopStories} />
             <Route exact path="/latest" component={NewStories} />
             <Route exact path="/comments/:id" component={Comments} />
             <Route  path="/user/comments/:id" component={Comments} />
             <Route  path="/user/:id" component={UserPosts} />
-            
+            <Redirect to="/top" />
         </ Switch>
         </section>
         </ Router>

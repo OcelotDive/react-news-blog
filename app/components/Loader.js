@@ -40,7 +40,7 @@ class Loading extends React.Component {
                 }
             })
     //bind the interval to the component with .bind        
-    }.bind(this),100)
+    }.bind(this),50)
     }
     
     //make sure to clear interval on unmount
@@ -52,7 +52,7 @@ class Loading extends React.Component {
     render() {
         
         return(
-            <p style={{backgroundColor: "#fff", textAlign: "center", fontSize: "65px"}}>
+            <p style={{backgroundColor: "#fff", textAlign: "center", fontSize: "30px"}}>
             {this.state.text}
             </p>
         )

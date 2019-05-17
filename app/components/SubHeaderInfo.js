@@ -15,9 +15,11 @@ function SubHeaderInfo({item}) {
                 <span className="infoText"> Date: <span className="infoSubject">{timeConvert(item.time)}</span>                             
                 </span>
                 <span className="infoText"> Comments: <span className="infoSubject" style={{textDecoration: "underline"}}>
+                 {item.kids ?   
                 <NavLink  to={{pathname: "/comments/" + item.id.toString(),state: {itemData: item}}}>
-                {item.kids ?item.kids.length : "0"}
+                    {item.kids.length}
                 </NavLink>
+                : "0"}
                 </span>
                 </span>
                 <span className="infoText"> Rating: <span className="infoSubject">{item.score}</span>

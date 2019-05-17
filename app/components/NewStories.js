@@ -7,7 +7,7 @@ const ListItems = require("./ListItems");
 class NewStories extends React.Component {
     constructor(props) {
         super(props);
-        
+        this._isMounted = true;
         this.state = {
             storyList: []
         }
@@ -24,18 +24,23 @@ class NewStories extends React.Component {
                   
                   list.push(item.data)
                   list.sort((a,b)=> b.time - a.time) 
-                  
+                   if(this._isMounted){
                     this.setState(()=> {
                         return {
                             storyList: list
                         }
                     })
-        
+                   }
                 })   
             })  
         }) 
     }  
     
+    componentWillUnmount() {
+        
+       this._isMounted = false;
+        
+    }
     
     render() {
         const data = this.state.storyList;

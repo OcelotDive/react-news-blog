@@ -15,6 +15,8 @@ function NavBar() {
              Latest
             </ NavLink>
             </li>
+ 
+          
         </ul>
     )
 }

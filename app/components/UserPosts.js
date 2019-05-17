@@ -28,7 +28,7 @@ function UserDataUI({data, postList}) {
 class UserPosts extends React.Component {
     constructor(props) {
         super(props);
-
+        this._isMounted = true;
         this.state = {
             userData: null,
             userPosts: null
@@ -42,12 +42,13 @@ class UserPosts extends React.Component {
         let userPosts = [];
         API.getUserData(user)
             .then(userData => {
-
+                if(this._isMounted){
                 this.setState(() => {
                     return {
                         userData: userData
                     }
                 })
+        }
             // fetch user posts
         API.getUserPosts(this.state.userData.submitted)
             .map(item => {
@@ -56,19 +57,22 @@ class UserPosts extends React.Component {
                 userPosts = userPosts.filter(post => {
                   return !post.dead && !post.deleted && post.type === "story";  
                 })
-                
+                if(this._isMounted){
                 this.setState(() => {
                     return {
                         userPosts: userPosts
                     }
                 })
+            }
             })
         })
             
             
         })   
     }
-
+        componentWillUnmount() {
+       this._isMounted = false;  
+    }
   
     render() {
         const loaderMessage = "Loading user posts";
