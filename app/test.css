@@ -52,7 +52,9 @@ a {
     text-decoration: none;
     color: white;
 }
-
+.loaderStrip {
+    background-color: #222 !important;
+}
 .storiesContainer {
     max-width: 1000px;
     margin: 4% auto;

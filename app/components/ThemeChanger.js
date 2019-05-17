@@ -4,7 +4,7 @@ const dark = require("../images/dark.png");
 const bulbOn = require("../images/on.png");
 const bulbOff = require("../images/off.png");
 
-const css = require("../test.css");
+const DarkTheme = require("./DarkTheme");
 
 class ThemeChanger extends React.Component {
     constructor(props) {
@@ -12,6 +12,8 @@ class ThemeChanger extends React.Component {
         
         this.state = {
             switchOnOff: false
+            
+            
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -21,6 +23,11 @@ class ThemeChanger extends React.Component {
               return {switchOnOff: !this.state.switchOnOff}
             }) 
         console.log(this.state.switchOnOff)
+        
+    }
+    
+    componentDidUpdate() {
+    
     }
     render() {
         

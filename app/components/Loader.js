@@ -52,7 +52,7 @@ class Loading extends React.Component {
     render() {
         
         return(
-            <p style={{backgroundColor: "#fff", textAlign: "center", fontSize: "30px"}}>
+            <p className="loaderStrip" style={{ textAlign: "center", fontSize: "30px"}}>
             {this.state.text}
             </p>
         )

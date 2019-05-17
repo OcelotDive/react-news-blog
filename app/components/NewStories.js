@@ -47,7 +47,7 @@ class NewStories extends React.Component {
         const loaderMessage = "Loading latest posts"
     return (
         <div className="storiesContainer">
-        {data.length < 20 ? <Loader text={loaderMessage}/> : <ListItems storyList={data}/>}
+        {data.length < 1 ? <Loader text={loaderMessage}/> : <ListItems storyList={data}/>}
         </div>
         
     )
