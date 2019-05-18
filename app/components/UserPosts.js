@@ -5,23 +5,28 @@ const Loader = require("./Loader");
 const timeConvert = require("../util/timeConvert");
 const createMarkup = require("../util/createMarkup");
 const ListItems = require("./ListItems");
+const ThemeConsumer = require("../util/theme").ThemeConsumer;
 function UserDataUI({data, postList}) {
     
    return (
+       <ThemeConsumer>
+       {({theme}) => (
        <div>
         <h1 className="newsItemTitle">{data.id}</h1>
-        <span className="infoText">Joined: <span className="infoSubject">
+        <span className="infoText">Joined: <span className={"infoSubject"+theme}>
             {timeConvert(data.created)}
             </span>
         </span>
-        <span className="infoText"> Karma: <span className="infoSubject">
+        <span className="infoText"> Karma: <span className={"infoSubject"+theme}>
             {data.karma}
             </span>
         </span>
-        <div className="aboutUser"dangerouslySetInnerHTML={createMarkup(data.about)}></div>
-        <h2>POSTS</h2>
+        <div className={"aboutUser"+theme}dangerouslySetInnerHTML={createMarkup(data.about)}></div>
+        <h2 className={"userPostTitle"+theme}>POSTS</h2>
               <ListItems storyList={postList}/>                                             
        </div>
+        )}
+       </ThemeConsumer>
        )
 }
 

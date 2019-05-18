@@ -130,11 +130,25 @@ a {
     padding: 15px;
 }
 
-.aboutUser {
+.aboutUserLight {
     margin-top: 30px;
     font-size: 20px;
     margin-top: 20px;
     padding: 10px;
+    color: #000;
+}
+.aboutUserDark {
+    margin-top: 30px;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    color: #fff;
+}
+.userPostTitleLight {
+    color: #000;
+}
+.userPostTitleDark {
+    color: #fff;
 }
 
 .themeContainer {
