@@ -5,6 +5,7 @@ const Route = ReactRouter.Route;
 const Redirect = ReactRouter.Redirect;
 const Switch = ReactRouter.Switch;
 const ThemeProvider = require("../util/theme").ThemeProvider;
+const ThemeConsumer = require("../util/theme").ThemeConsumer;
 const NavBar = require("./NavBar");
 const TopStories = require("./TopStories");
 const NewStories = require("./NewStories");
@@ -30,6 +31,9 @@ render() {
     return(
         <Router>
         <ThemeProvider value={this.state}>
+        <ThemeConsumer>
+        {({ theme, toggleTheme }) => (
+        <section className={"page"+theme}>
         <section className="outerContainer">
         <ThemeImage />
         <NavBar />
@@ -43,6 +47,9 @@ render() {
             <Redirect to="/top" />
         </ Switch>
         </ section>
+        </section>
+        )}
+        </ ThemeConsumer>
         </ ThemeProvider>
         </ Router>
         )

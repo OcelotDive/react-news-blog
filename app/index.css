@@ -2,7 +2,19 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, SegoeUI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, HelveticaNeue, sans-serif;
     
 }
-
+.pageLight {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    
+}
+.pageDark {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+}
 .outerContainer {
     position: relative;
     max-width: 1000px;
