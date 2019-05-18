@@ -50,7 +50,7 @@ class NewStories extends React.Component {
         <ThemeConsumer>
         {({theme}) => (
         <div className={"storiesContainer"+theme}>
-        {data.length < 1 ? <Loader text={loaderMessage}/> : <ListItems storyList={data}/>}
+        {data.length < 50 ? <Loader text={loaderMessage}/> : <ListItems storyList={data}/>}
         </div>
         )}
         </ThemeConsumer>

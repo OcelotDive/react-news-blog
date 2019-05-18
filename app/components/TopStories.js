@@ -56,7 +56,7 @@ class TopStories extends React.Component {
         <ThemeConsumer>
         {({theme}) => (
         <div className={"storiesContainer"+theme}>
-        {data.length < 20 ? <Loader text={loaderMessage}/> : <ListItems storyList={data}/>}
+        {data.length < 50 ? <Loader text={loaderMessage}/> : <ListItems storyList={data}/>}
         </div>
         )}
         </ThemeConsumer>

@@ -6,7 +6,7 @@ function ListItems(props) {
    
     return (
         <ul className="storiesList">
-        {props.storyList.length === 0 && <div>No posts yet.</div>}
+        {props.storyList.length === 0 && <div style={{color: "crimson"}}>No posts yet.</div>}
         {props.storyList.map(item => {
          return (
             <li key={item.id} className="newsItem">

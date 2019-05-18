@@ -4,7 +4,7 @@ const axios = require("axios");
 function getTopStoryList100(keyword) {
     if(!keyword) source.cancel("operation cancelled")
     return axios.get("https://hacker-news.firebaseio.com/v0/"+keyword+".json?print=pretty")
-    .then(data => data.data.slice(0,100))  
+    .then(data => data.data.slice(0,50))  
    
 }
 
@@ -44,7 +44,7 @@ function getUserPosts(postArray) {
     return postArray.map(postId => {
         return axios.get("https://hacker-news.firebaseio.com/v0/item/"+postId+".json?print=pretty")
                 .then(postItem => postItem.data);
-    }).slice(0,100)
+    }).slice(0,50)
             
 }
 

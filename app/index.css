@@ -1,18 +1,23 @@
+html, body, #app {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, SegoeUI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, HelveticaNeue, sans-serif;
-    
 }
 .pageLight {
     position: absolute;
     width: 100%;
-    height: inherit;
+    height: 100%;
     background-color: #fff;
     
 }
 .pageDark {
     position: absolute;
     width: 100%;
-    height: inherit;
+    height: 100%;
     background-color: #222;
 }
 .outerContainer {
