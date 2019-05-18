@@ -1,9 +1,11 @@
 const React = require('react');
 const NavLink = require('react-router-dom').NavLink;
-
+const ThemeConsumer = require("../util/theme").ThemeConsumer;
 function NavBar() {
     
     return (
+        <ThemeConsumer>
+        {({ theme, toggleTheme }) => (
         <ul className="navBar">
             <li>
                 <NavLink activeClassName="navActive" to={{pathname: "/top",state: {list: "top"}}}>
@@ -18,6 +20,8 @@ function NavBar() {
  
           
         </ul>
+        )}
+        </ThemeConsumer>
     )
 }
 
