@@ -26,9 +26,7 @@ class ThemeChanger extends React.Component {
         
     }
     
-    componentDidUpdate() {
-    
-    }
+  
     render() {
         
         return (
