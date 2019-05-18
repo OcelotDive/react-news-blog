@@ -1,5 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require ('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin')
 // Object which contains an entry point loaders an output path and any plugins
 // publicPath property allows to set base path for all assets
 //historyApiFallback when server sees a route it falls back to the root then 
@@ -26,7 +27,10 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: 'app/index.html'
-        })
+        }),
+         new CopyPlugin([
+      { from : '_redirects' }
+    ])
     ]
     
 }

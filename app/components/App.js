@@ -4,6 +4,7 @@ const Router = ReactRouter.BrowserRouter;
 const Route = ReactRouter.Route;
 const Redirect = ReactRouter.Redirect;
 const Switch = ReactRouter.Switch;
+const ThemeProvider = require("../util/theme").ThemeProvider;
 const NavBar = require("./NavBar");
 const TopStories = require("./TopStories");
 const NewStories = require("./NewStories");
@@ -16,11 +17,19 @@ const ThemeChanger = require("./ThemeChanger");
 //routes will work for links on imported components
 
 class App extends React.Component {
-    
+   state = {
+    theme: 'light',
+    toggleTheme: () => {
+      this.setState(({ theme }) => ({
+        theme: theme === 'light' ? 'dark' : 'light'
+      }))
+    }
+  }
 render() {
+
     return(
         <Router>
-        
+        <ThemeProvider value={this.state}>
         <section className="outerContainer">
         <ThemeChanger />
         <NavBar />
@@ -33,7 +42,8 @@ render() {
             <Route  path="/user/:id" component={UserPosts} />
             <Redirect to="/top" />
         </ Switch>
-        </section>
+        </ section>
+        </ ThemeProvider>
         </ Router>
         )
     }
