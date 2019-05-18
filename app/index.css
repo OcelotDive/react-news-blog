@@ -50,9 +50,9 @@ ul {
 
 a {
     text-decoration: none;
-    color: black;
+    color: inherit;
 }
-.loaderStrip {
+oaderStrip {
     background-color: #fff;
     color: #fff;
 }
@@ -74,8 +74,13 @@ a {
     margin-bottom: 10px;
 }
 
-.infoSubject {
+.infoSubjectLight {
     color: #000;
+    font-size: 16px;
+}
+
+.infoSubjectDark {
+    color: #fff;
     font-size: 16px;
 }
 

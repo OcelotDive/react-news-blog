@@ -10,7 +10,7 @@ const TopStories = require("./TopStories");
 const NewStories = require("./NewStories");
 const Comments = require("./Comments");
 const UserPosts = require("./UserPosts");
-const ThemeChanger = require("./ThemeChanger");
+const ThemeImage = require("./ThemeImage");
 //set the route component where you want a specific component displayed
 //after navigating to that path
 //Switch renders on specific route that is not an active route eg 404
@@ -18,10 +18,10 @@ const ThemeChanger = require("./ThemeChanger");
 
 class App extends React.Component {
    state = {
-    theme: 'light',
+    theme: 'Light',
     toggleTheme: () => {
       this.setState(({ theme }) => ({
-        theme: theme === 'light' ? 'dark' : 'light'
+        theme: theme === 'Light' ? 'Dark' : 'Light'
       }))
     }
   }
@@ -31,7 +31,7 @@ render() {
         <Router>
         <ThemeProvider value={this.state}>
         <section className="outerContainer">
-        <ThemeChanger />
+        <ThemeImage />
         <NavBar />
         
         <Switch>

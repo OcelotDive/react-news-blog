@@ -1,12 +1,14 @@
 const React = require("react");
 const NavLink = require('react-router-dom').NavLink;
 const timeConvert = require("../util/timeConvert");
-
+const ThemeConsumer = require("../util/theme").ThemeConsumer;
 function SubHeaderInfo({item}) {
    
      return(
+         <ThemeConsumer>
+          {({ theme, toggleTheme }) => (
         <div>
-            <span className="infoText">By: <span className="infoSubject" style={{textDecoration: "underline"}}>
+            <span className="infoText">By: <span className={"infoSubject"+theme} style={{textDecoration: "underline"}}>
                 <NavLink  to={"/user/" + item.by}>
                 {item.by}
                 </NavLink>
@@ -25,6 +27,8 @@ function SubHeaderInfo({item}) {
                 <span className="infoText"> Rating: <span className="infoSubject">{item.score}</span>
             </span>
         </div>
+       )}
+      </ ThemeConsumer>
      )
 }
 
