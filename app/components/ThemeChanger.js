@@ -4,7 +4,7 @@ const dark = require("../images/dark.png");
 const bulbOn = require("../images/on.png");
 const bulbOff = require("../images/off.png");
 
-const DarkTheme = require("./DarkTheme");
+
 
 class ThemeChanger extends React.Component {
     constructor(props) {
