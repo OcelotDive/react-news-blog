@@ -1,6 +1,6 @@
 const React = require('react');
 const PropTypes = require("prop-types");
-
+const ThemeConsumer = require("../util/theme").ThemeConsumer;
 
 class Loading extends React.Component {
     
@@ -52,9 +52,13 @@ class Loading extends React.Component {
     render() {
         
         return(
-            <p className="loaderStrip" style={{ textAlign: "center", fontSize: "30px"}}>
+            <ThemeConsumer>
+            {({ theme }) => (
+            <p className={"loaderStrip"+theme} style={{ textAlign: "center", fontSize: "30px"}}>
             {this.state.text}
             </p>
+            )}
+            </ThemeConsumer>
         )
     }
 }

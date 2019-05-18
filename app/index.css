@@ -5,14 +5,14 @@ body {
 .pageLight {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: inherit;
     background-color: #fff;
     
 }
 .pageDark {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: inherit;
     background-color: #222;
 }
 .outerContainer {
@@ -21,33 +21,42 @@ body {
     margin: 3% 0% 0 8%;
 }
 
-.navBar {
+.navBarLight {
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     padding: 0;
     width: 40%;
+    color: black;
 }
 
-.navBar > li {
+.navBarDark {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0;
+    width: 40%;
+    color: #fff;
+}
+
+.navBarLight > li, .navBarDark > li {
     margin: 0 0 0 20px;
-    color: black;
     font-weight: 600;
     padding: 0;
 }
 
-.navBar > li:nth-child(1) {
+.navBarLight > li:nth-child(1), .navBarDark > li:nth-child(1) {
     margin: 0;
 }
 
-.navBar > li:hover {
+.navBarLight > li:hover, .navBarDark > li:hover {
     cursor: pointer;
 }
 
 .navActive {
     text-decoration: underline;
-
     color: crimson;
 }
 
@@ -64,15 +73,23 @@ a {
     text-decoration: none;
     color: inherit;
 }
-oaderStrip {
+.loaderStripLight {
     background-color: #fff;
+    color: #000;
+}
+.loaderStripDark {
+    background-color: #222;
     color: #fff;
 }
-.storiesContainer {
+.storiesContainerLight {
     max-width: 1000px;
     margin: 4% auto;
     background-color: #ebebeb;
-
+}
+.storiesContainerDark {
+    max-width: 1000px;
+    margin: 4% auto;
+    background-color: #111;
 }
 
 .storiesList {
@@ -81,7 +98,7 @@ oaderStrip {
 }
 
 .newsItemTitle {
-    color: blueviolet;
+    color: crimson;
     font-weight: 600;
     margin-bottom: 10px;
 }

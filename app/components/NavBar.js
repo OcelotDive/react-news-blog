@@ -5,8 +5,8 @@ function NavBar() {
     
     return (
         <ThemeConsumer>
-        {({ theme, toggleTheme }) => (
-        <ul className="navBar">
+        {({ theme }) => (
+        <ul className={"navBar"+theme}>
             <li>
                 <NavLink activeClassName="navActive" to={{pathname: "/top",state: {list: "top"}}}>
                  Top

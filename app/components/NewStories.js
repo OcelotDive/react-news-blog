@@ -3,6 +3,7 @@ const API = require("../api/API");
 const PropTypes = require("prop-types");
 const Loader = require("./Loader");
 const ListItems = require("./ListItems");
+const ThemeConsumer = require("../util/theme").ThemeConsumer;
 
 class NewStories extends React.Component {
     constructor(props) {
@@ -46,10 +47,13 @@ class NewStories extends React.Component {
         const data = this.state.storyList;
         const loaderMessage = "Loading latest posts"
     return (
-        <div className="storiesContainer">
+        <ThemeConsumer>
+        {({theme}) => (
+        <div className={"storiesContainer"+theme}>
         {data.length < 1 ? <Loader text={loaderMessage}/> : <ListItems storyList={data}/>}
         </div>
-        
+        )}
+        </ThemeConsumer>
     )
     
     }
