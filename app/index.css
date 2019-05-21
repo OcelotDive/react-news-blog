@@ -202,3 +202,63 @@ a {
     margin-top: 0;
     transform: rotate(30deg);
 }
+
+.loaderContainer {
+    height: 20px;
+    width: 250px;
+    margin: auto;
+    border: solid 1px red;
+    
+}
+.circle {
+    position: absolute;
+    border: solid 2px #fff;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: #000;
+    animation: loading;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+loaderContainer:first-child {
+    background-color: #8cc759;
+    animation-delay: 0.5s;
+}
+loaderContainer:nth-child(2) {
+    background-color: #8c6daf;
+    animation-delay: 0.4s;
+}
+loaderContainer:nth-child(3) {
+    background-color: #ef5d74;
+    animation-delay: 0.3s;
+}
+loaderContainer:nth-child(4) {
+    background-color: #f9a74b;
+    animation-delay: 0.2s;
+}
+loaderContainer:nth-child(5) {
+    background-color: #60beeb;
+    animation-delay: 0.1s;
+}
+loaderContainer:nth-child(6) {
+    background-color: #fbef5a;
+    animation-delay: 0s;
+}
+
+@keyframes loading {
+    15% {
+    transform: translateX(0);
+    }
+    45% {
+    transform: translateX( 250px,20px );
+    }
+    65% {
+    transform: translateX( 250px,20px);
+    }
+    95% {
+    transform: translateX(0);
+        
+    }
+}
