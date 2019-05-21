@@ -23,7 +23,9 @@ function UserDataUI({data, postList}) {
         </span>
         <div className={"aboutUser"+theme}dangerouslySetInnerHTML={createMarkup(data.about)}></div>
         <h2 className={"userPostTitle"+theme}>POSTS</h2>
-              <ListItems storyList={postList}/>                                             
+            <div className={"storiesContainer"+theme}>
+              <ListItems storyList={postList}/>     
+            </div>
        </div>
         )}
        </ThemeConsumer>
@@ -81,11 +83,16 @@ class UserPosts extends React.Component {
   
     render() {
         const loaderMessage = "Loading user posts";
-    
+        
         return ( 
-            <div className="storiesContainer">
+            <ThemeConsumer>
+            {({theme}) => (
+             
+            <div>
                {this.state.userPosts ? <UserDataUI data={this.state.userData} postList={this.state.userPosts}/> : <Loader text={loaderMessage} /> }
             </div>
+            )}
+            </ThemeConsumer>
 
         )
 

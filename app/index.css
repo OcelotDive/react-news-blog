@@ -7,7 +7,25 @@ html, body, #app {
 body {
     font-family: -apple-system, BlinkMacSystemFont, SegoeUI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, HelveticaNeue, sans-serif;
 }
+.headerLight {
+    color: #000;
+    font-size: 18px;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    width: 308px;
+    position: absolute;
+    top: -30px;
+}
 
+.headerDark {
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    width: 308px;
+    position: absolute;
+    top: -30px;
+}
 .pageLight {
     position: absolute;
     width: 100%;
@@ -26,7 +44,7 @@ body {
 .outerContainer {
     position: relative;
     max-width: 1000px;
-    margin: 3% 0% 0 8%;
+    margin: 7.5% 0% 0 8%;
 }
 
 .navBarLight {
@@ -85,11 +103,17 @@ a {
 .loaderStripLight {
     background-color: #fff;
     color: #000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+  
 }
 
 .loaderStripDark {
     background-color: #222;
     color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+   
 }
 
 .storiesContainerLight {
@@ -208,12 +232,14 @@ a {
     width: 250px;
     margin: auto;
     background-color: #fff;
+
 }
 .loaderContainerDark {
     height: 20px;
     width: 250px;
     margin: auto;
     background-color: #222;
+ 
 }
 
 .circle {
@@ -259,10 +285,10 @@ a {
     transform: translate(0);
     }
     45% {
-    transform: translate( 250px,0px );
+    transform: translate( 230px,0px );
     }
     65% {
-    transform: translate( 250px,0px);
+    transform: translate( 230px,0px);
     }
     95% {
     transform: translate(0);

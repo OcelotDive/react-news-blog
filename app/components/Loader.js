@@ -54,7 +54,7 @@ class Loading extends React.Component {
             <ThemeConsumer>
             {({ theme }) => (
             <div className={"loaderStrip"+theme}>
-            <p className={"loaderStrip"+theme} style={{ textAlign: "center", fontSize: "30px"}}>
+            <p className={"loaderStrip"+theme} style={{ textAlign: "center", fontSize: "18px"}}>
             {this.state.text}
             </p>
             <div className={"loaderContainer"+theme}>

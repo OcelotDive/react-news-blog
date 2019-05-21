@@ -36,6 +36,7 @@ render() {
         <section className={"page"+theme}>
         <section className="outerContainer">
         <ThemeImage />
+        <header className={"header"+theme}>Hacker News Clone</header>
         <NavBar />
         
         <Switch>
