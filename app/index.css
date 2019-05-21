@@ -215,14 +215,14 @@ a {
 }
 
 .switchLight {
-    width: 45px;
-    height: 65px;
+    width: 35px;
+    height: 55px;
     margin-top: 0;
 }
 
 .switchLight2 {
-    width: 45px;
-    height: 65px;
+    width: 35px;
+    height: 55px;
     margin-top: 0;
     transform: rotate(30deg);
 }
