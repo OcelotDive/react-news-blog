@@ -23,7 +23,7 @@ class ThemeImage extends React.Component {
               return {switchOnOff: !this.state.switchOnOff}
             }) 
       
-        console.log(this.state.switchOnOff)
+        
        
     }
     

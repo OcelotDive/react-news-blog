@@ -21,7 +21,6 @@ class Loading extends React.Component {
         this.interval = window.setInterval(function() { 
             if(index === stopper) {
                 text = originalText;
-                
                 index = 0;
             }
             else {
@@ -30,7 +29,7 @@ class Loading extends React.Component {
                 if(text[index - 1] !== undefined) {
                 text[index - 1] = text[index -1 ].toLowerCase();
                 }
-                text = text.join("");
+                text = text.join("")
                 index++
             }
             this.setState(function() {
@@ -57,6 +56,7 @@ class Loading extends React.Component {
             <p className={"loaderStrip"+theme} style={{ textAlign: "center", fontSize: "30px"}}>
             {this.state.text}
             </p>
+            
             )}
             </ThemeConsumer>
         )

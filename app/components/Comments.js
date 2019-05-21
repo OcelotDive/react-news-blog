@@ -4,26 +4,31 @@ const timeConvert = require("../util/timeConvert");
 const createMarkup = require("../util/createMarkup");
 const NavLink = require('react-router-dom').NavLink;
 const SubHeaderInfo = require("./SubHeaderInfo");
+const Loader = require("./Loader");
 const axios = require("axios");
-
+const ThemeConsumer = require("../util/theme").ThemeConsumer;
 function CommentUI({postData, comments}) {
    
    
     
     return (
+    <ThemeConsumer>
+        {({theme}) => (
      <div>
         <SubHeaderInfo item={postData} />
         <br/>
         {comments && comments.map(comment => {
          return (
-            <div className="commentContainer" key={comment.id}>
+            <div className={"commentContainer"+theme} key={comment.id}>
             <span className="infoText">By: <span className="infoSubject" style={{textDecoration: "underline"}}><NavLink  to={"/user/" + comment.by}>{comment.by}</NavLink></span></span><span className="infoText"> On: <span className="infoSubject">{timeConvert(comment.time)}</span></span>
-            <div className="commentBody" id="commentText" dangerouslySetInnerHTML={createMarkup(comment.text)}></div>
+            <div className={"commentBody"+theme} id="commentText" dangerouslySetInnerHTML={createMarkup(comment.text)}></div>
             </div>
          )
         })}
     
      </div>
+        )}
+    </ThemeConsumer>
     )
 }
 
