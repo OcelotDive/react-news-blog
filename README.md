@@ -1,6 +1,8 @@
 # react-news-blog
 
-### A simple hacker news clone [View Deploy](https://kind-stonebraker-b16ce8.netlify.com/top)
+## A simple hacker news clone 
+
+[View Deploy](https://kind-stonebraker-b16ce8.netlify.com/top)
 
 In Dark Mode
 
