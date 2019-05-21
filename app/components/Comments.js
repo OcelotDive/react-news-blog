@@ -22,7 +22,8 @@ function CommentUI({postData, comments}) {
             <div className={"commentContainer"+theme} key={comment.id}>
             <span className="infoText">By: <span className="infoSubject" style={{textDecoration: "underline"}}><NavLink  to={"/user/" + comment.by}>{comment.by}</NavLink></span></span><span className="infoText"> On: <span className="infoSubject">{timeConvert(comment.time)}</span></span>
             <div className={"commentBody"+theme} id="commentText" dangerouslySetInnerHTML={createMarkup(comment.text)}></div>
-            </div>
+            </div> 
+            
          )
         })}
     

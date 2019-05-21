@@ -39,7 +39,7 @@ class Loading extends React.Component {
                 }
             })
     //bind the interval to the component with .bind        
-    }.bind(this),50)
+    }.bind(this),100)
     }
     
     //make sure to clear interval on unmount
@@ -53,11 +53,11 @@ class Loading extends React.Component {
         return(
             <ThemeConsumer>
             {({ theme }) => (
-            <div>
+            <div className={"loaderStrip"+theme}>
             <p className={"loaderStrip"+theme} style={{ textAlign: "center", fontSize: "30px"}}>
             {this.state.text}
             </p>
-            <div className="loaderContainer">
+            <div className={"loaderContainer"+theme}>
             <div className="circle"></div>
             <div className="circle"></div>
             <div className="circle"></div>

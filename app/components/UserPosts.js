@@ -84,7 +84,7 @@ class UserPosts extends React.Component {
     
         return ( 
             <div className="storiesContainer">
-               {this.state.userPosts ? <UserDataUI data={this.state.userData} postList={this.state.userPosts}/> : <Loader loaderMessage={loaderMessage} /> }
+               {this.state.userPosts ? <UserDataUI data={this.state.userData} postList={this.state.userPosts}/> : <Loader text={loaderMessage} /> }
             </div>
 
         )

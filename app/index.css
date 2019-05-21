@@ -203,62 +203,69 @@ a {
     transform: rotate(30deg);
 }
 
-.loaderContainer {
+.loaderContainerLight {
     height: 20px;
     width: 250px;
     margin: auto;
-    border: solid 1px red;
-    
+    background-color: #fff;
 }
+.loaderContainerDark {
+    height: 20px;
+    width: 250px;
+    margin: auto;
+    background-color: #222;
+}
+
 .circle {
     position: absolute;
-    border: solid 2px #fff;
-    height: 20px;
-    width: 20px;
+    border: solid 1px #fff;
+    height: 10px;
+    width: 10px;
     border-radius: 100%;
     background-color: #000;
-    animation: loading;
+    animation-name: loading;
     animation-timing-function: ease-in-out;
     animation-duration: 3s;
     animation-iteration-count: infinite;
+    box-shadow: 1px 1px 1px;
 }
-loaderContainer:first-child {
-    background-color: #8cc759;
+.circle:nth-of-type(1) {
+    background-color: crimson;
     animation-delay: 0.5s;
 }
-loaderContainer:nth-child(2) {
-    background-color: #8c6daf;
+.circle:nth-of-type(2) {
+    background-color: crimson;
     animation-delay: 0.4s;
 }
-loaderContainer:nth-child(3) {
-    background-color: #ef5d74;
+.circle:nth-of-type(3) {
+    background-color: crimson;
     animation-delay: 0.3s;
 }
-loaderContainer:nth-child(4) {
-    background-color: #f9a74b;
+.circle:nth-of-type(4) {
+    background-color: crimson;
     animation-delay: 0.2s;
 }
-loaderContainer:nth-child(5) {
-    background-color: #60beeb;
+.circle:nth-of-type(5) {
+    background-color: crimson;
     animation-delay: 0.1s;
 }
-loaderContainer:nth-child(6) {
-    background-color: #fbef5a;
+.circle:nth-of-type(6) {
+    background-color: crimson;
     animation-delay: 0s;
 }
 
 @keyframes loading {
     15% {
-    transform: translateX(0);
+    transform: translate(0);
     }
     45% {
-    transform: translateX( 250px,20px );
+    transform: translate( 250px,0px );
     }
     65% {
-    transform: translateX( 250px,20px);
+    transform: translate( 250px,0px);
     }
     95% {
-    transform: translateX(0);
+    transform: translate(0);
         
     }
 }
