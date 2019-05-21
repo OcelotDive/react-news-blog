@@ -2,7 +2,7 @@
 
 ## A simple hacker news clone 
 
-[View Deploy](https://kind-stonebraker-b16ce8.netlify.com/top)
+[View Deploy](https://kind-stonebraker-b16ce8.netlify.com)
 
 In Dark Mode
 
